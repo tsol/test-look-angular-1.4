@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon -e html,js,css,less -w ./src/ -x 'npm run build'"
   },
   "author": "look",
   "license": "MIT",

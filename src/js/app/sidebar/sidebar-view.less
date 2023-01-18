@@ -1,0 +1,23 @@
+@import 'variables';
+
+sidebar-view {
+  @border-size: 1px;
+
+  display: block;
+  width: @sidebar-width + @border-size;
+  border-left: @border-size solid @c-gray;
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+  padding-left: 12px;
+}
+
+.sidebar-view__taglist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 12px 0;
+  margin-left: 24px;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,22 @@
+<div class="sidebar-view__selected">
+  <h4>Selected: {{ selection.item ? selection.item.title : 'None' }}</h4>
+  <p ng-if="!selection.item">
+    Please select one of the elements on the center column
+  </p>
+</div>
+
+<div ng-if="selection.item">
+  <ul ng-if="selection.item.tags.length" class="sidebar-view__taglist">
+    <li ng-repeat="tag in selection.item.tags track by $index">
+      <span>{{tag}}</span>
+      <button ng-click="removeTagByIndex($index)">X</button>
+    </li>
+  </ul>
+
+  <p ng-if="!selection.item.tags.length">No tags</p>
+
+  <div class="sidebar-view__addtag">
+    New tag: <input type="text" ng-model="form.newTag" placeholder="Tag name" />
+    <button ng-click="addTag()">Add</button>
+  </div>
+</div>

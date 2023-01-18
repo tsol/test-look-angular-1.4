@@ -1,0 +1,32 @@
+<some-1></some-1>
+
+<div class="content-view__ctrls">
+  <p>
+    Order:
+    <select ng-model="orderBy" ng-options="o for o in orderFields"></select>
+  </p>
+  <p>Only date: <input type="checkbox" ng-model="hideDate" /></p>
+  <p>Search: <input type="text" ng-model="search.title" /></p>
+</div>
+
+<ul class="content-view__list">
+  <li
+    ng-repeat="item in items | filter:search | orderBy: orderBy"
+    class="content-view__list__item {{ isSelected(item) ? 'content-view__list__item--selected' : '' }} "
+    ng-click="selectItemById(item.id)"
+  >
+    <div class="content-view__item">
+      <div class="content-view__item__title">
+        Title: <span>{{item.title}}</span>
+      </div>
+      <div ng-hide="hideDate" class="content-view__item__date">
+        Date: <span>{{item.date | date:'dd.MM.yyyy hh:mm'}}</span>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div class="content-view__add">
+  New title: <input type="text" ng-model="newItem.title" placeholder="Title" />
+  <button ng-click="addItem()">Add</button>
+</div>
