@@ -1,0 +1,48 @@
+@import 'variables';
+
+content-view {
+  display: block;
+  border-left: 1px solid @c-gray;
+}
+
+.content-view__ctrls {
+  display: block;
+  margin: 0;
+  padding: 12px;
+  line-height: 1.5rem;
+}
+
+.content-view__ctrls > p {
+  display: block;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+// **************************************
+
+.content-view__list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  list-style-type: none;
+}
+
+.content-view__list__item {
+  padding: 0 12px;
+  border-top: 1px solid @c-gray-light;
+  border-bottom: 1px solid @c-gray-light;
+}
+
+.content-view__list > li:hover {
+  background-color: @c-gray-light;
+}
+
+.content-view__list__item--selected {
+  background-color: @c-gray;
+}
+
+.content-view__add {
+  padding: 0 12px;
+}
